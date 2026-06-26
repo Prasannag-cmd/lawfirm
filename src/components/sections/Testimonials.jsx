@@ -11,13 +11,13 @@ import 'swiper/css/navigation';
 
 export default function Testimonials() {
   return (
-    <section className="py-[70px] md:py-[90px] lg:py-[120px] bg-warm-white relative overflow-hidden">
+    <section id="testimonials" className="scroll-mt-[110px] py-[70px] md:py-[90px] lg:py-[120px] bg-warm-white relative overflow-hidden">
       <div className="absolute top-0 right-0 w-96 h-96 bg-gold/5 rounded-full blur-[150px] pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full">
         <SectionHeading title="Client Testimonials" subtitle="What Our Clients Say" />
 
-        <div className="px-0 sm:px-8 lg:px-12">
+        <div className="px-0 sm:px-8 lg:px-12 mt-10">
         <Swiper
           modules={[Autoplay, Pagination, Navigation]}
           spaceBetween={24}
