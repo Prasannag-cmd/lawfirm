@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@import "tailwindcss";
+@source "./**/*.{js,jsx,ts,tsx,html}";
+
+@theme {
+  --color-navy: #2C352E;        /* Grounded deep pine/forest charcoal (was primary navy) */
+  --color-navy-light: #F2EFE9;  /* Grounded light sand (was secondary background) */
+  --color-gold: #C07A60;        /* Terracotta (was luxury gold) */
+  --color-gold-light: #E0B0B0;    /* Dusk Pink (was premium gold) */
+  --color-ivory: #FAF9F6;       /* Alabaster off-white */
+  --color-silver: #D5CEC2;      /* Linen border color */
+  --color-cream: #EFEBE4;       /* Warm Sand cream */
+  --color-warm-white: #FAF9F6;  /* Soft Alabaster White */
+  --color-hover-gold: #A55D44;  /* Deep Terracotta for hover */
+  --color-text-primary: #2B2F2A; /* Forest charcoal */
+  --color-text-secondary: #5A6258; /* Calm sage gray-green */
+  --font-playfair: 'EB Garamond', serif;
+  --font-cormorant: 'EB Garamond', serif;
+  --font-inter: 'Outfit', 'Inter', sans-serif;
+  
+  /* Additional Calm Palette Variables */
+  --color-sage: #8A9A86;
+  --color-sage-light: #C2CDC1;
+  --color-sand: #DCD0C0;
+  --color-sand-light: #EFEBE4;
+  --color-terracotta: #C07A60;
+  --color-dusk-pink: #E0B0B0;
+}
+
+/* Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Outfit', 'Inter', sans-serif;
+  background-color: #FAF9F6;   /* Alabaster off-white background */
+  color: #2B2F2A;              /* Grounded text */
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Subtle Linen & Paper Noise Texture */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  opacity: 0.02;
+  pointer-events: none;
+  z-index: 1;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+
+::selection {
+  background-color: #C9A227;
+  color: #FFFFFF;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF9F6;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C9A227;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B9961A;
+}
+
+/* Swiper custom */
+.testimonials-swiper .swiper-pagination-bullet {
+  background: #DCD0C0;
+  opacity: 0.5;
+  width: 10px;
+  height: 10px;
+  transition: all 0.3s;
+}
+
+.testimonials-swiper .swiper-pagination-bullet-active {
+  background: #C07A60;
+  opacity: 1;
+  width: 30px;
+  border-radius: 5px;
+}
+
+.testimonials-swiper .swiper-button-next,
+.testimonials-swiper .swiper-button-prev {
+  color: #C07A60;
+  width: 44px;
+  height: 44px;
+  background: #fff;
+  border-radius: 50%;
+  border: 2px solid #C07A60;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+  transition: all 0.3s;
+}
+
+.testimonials-swiper .swiper-button-prev {
+  left: 4px;
+}
+
+.testimonials-swiper .swiper-button-next {
+  right: 4px;
+}
+
+.testimonials-swiper .swiper-button-next:hover,
+.testimonials-swiper .swiper-button-prev:hover {
+  background: #C07A60;
+  color: #fff;
+}
+
+.testimonials-swiper .swiper-button-next::after,
+.testimonials-swiper .swiper-button-prev::after {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.testimonials-swiper .swiper-slide {
+  height: auto !important;
+  display: flex;
+}
+
+/* Scrollbar utilities */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 4px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(179, 158, 128, 0.3);
+  border-radius: 2px;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Intro page */
+.intro-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FAF8F5;
+}
+
+/* Page transition */
+.page-transition-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.5s ease;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #1A1D20, #B39E80);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Gold underline */
+.gold-underline {
+  position: relative;
+}
+
+.gold-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #B39E80, #C8B69C);
+  border-radius: 2px;
+}
+
+/* Subtle pattern background */
+.pattern-bg {
+  background-image: radial-gradient(circle at 1px 1px, rgba(179, 158, 128, 0.05) 1px, transparent 0);
+  background-size: 40px 40px;
+}
+
+/* Glass effect for light theme */
+.glass-light {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(179, 158, 128, 0.15);
+}
+
+/* Breath Cycle Animation (4-second cycle: 2s expand, 2s contract) */
+@keyframes breathCycle {
+  0%, 100% {
+    transform: scale(1.0);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+}
+
+.animate-breath {
+  animation: breathCycle 4s ease-in-out infinite;
+}
+
+/* Ken Burns Zoom */
+.ken-burns-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.ken-burns-container img {
+  transition: transform 8s cubic-bezier(0.25, 1, 0.3, 1);
+}
+
+.ken-burns-container:hover img {
+  transform: scale(1.08);
+}
+
+/* Selection Override */
+::selection {
+  background-color: #C07A60; /* Terracotta */
+  color: #FFFFFF;
+}
+
+/* Scrollbar Override */
+::-webkit-scrollbar-thumb {
+  background: #C07A60; /* Terracotta */
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A55D44; /* Deep Terracotta */
+}
+
