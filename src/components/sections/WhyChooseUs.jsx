@@ -16,7 +16,7 @@ const reasons = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-[70px] md:py-[90px] lg:py-[120px] bg-warm-white relative overflow-hidden border-t border-gold/10">
+    <section className="pt-20 md:pt-24 lg:pt-28 pb-10 bg-warm-white relative overflow-hidden border-t border-gold/10">
       <div className="absolute inset-0 pattern-bg opacity-[0.03]" />
       <div className="absolute top-[20%] right-[5%] w-64 h-64 bg-gold/5 rounded-full blur-[100px]" />
 
@@ -24,13 +24,13 @@ export default function WhyChooseUs() {
         <SectionHeading title="Why Choose VN Law Firm" subtitle="Trusted Legal Partner" />
 
         {/* Statistics Section (High-Contrast Navy Blue Block) */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 bg-navy border border-gold/20 rounded-3xl p-8 md:p-12 text-center mb-20 shadow-[0_8px_30px_rgba(44,53,46,0.04)] relative overflow-hidden">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-8 lg:gap-y-0 lg:divide-x lg:divide-gold/20 bg-navy border border-gold/20 rounded-3xl p-8 md:p-12 text-center mb-12 shadow-[0_8px_30px_rgba(44,53,46,0.04)] relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-gold/5 via-transparent to-transparent pointer-events-none" />
           {statistics.map((stat, i) => {
             const Icon = icons[i];
             return (
-              <ScrollReveal key={stat.label} delay={i * 0.1}>
-                <div className="relative group">
+              <ScrollReveal key={stat.label} delay={i * 0.1} className="flex flex-col items-center justify-center h-full px-4 lg:px-6">
+                <div className="relative group flex flex-col items-center justify-center text-center">
                   <Icon className="text-gold mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" size={32} />
                   <p className="text-3xl md:text-4xl lg:text-5xl font-bold text-gold mb-2 font-playfair">
                     <AnimatedCounter value={stat.value} suffix={stat.suffix} />
@@ -45,8 +45,8 @@ export default function WhyChooseUs() {
         {/* Reasons */}
         <div className="grid md:grid-cols-2 gap-8">
           {reasons.map((reason, i) => (
-            <ScrollReveal key={reason.title} delay={i * 0.1} animation={i % 2 === 0 ? 'fadeLeft' : 'fadeRight'}>
-              <div className="flex gap-5 group">
+            <ScrollReveal key={reason.title} delay={i * 0.1} animation={i % 2 === 0 ? 'fadeLeft' : 'fadeRight'} className="h-full">
+              <div className="bg-white border border-silver/40 rounded-2xl p-6 h-full flex items-start gap-5 group hover:border-sage/40 hover:shadow-lg transition-all duration-300">
                 <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gold/10 border border-gold/20 flex items-center justify-center">
                   <span className="font-playfair text-xl font-bold text-gold">{String(i + 1).padStart(2, '0')}</span>
                 </div>

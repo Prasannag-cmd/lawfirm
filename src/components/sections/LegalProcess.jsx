@@ -75,21 +75,21 @@ export default function LegalProcess() {
   };
 
   return (
-    <section id="process" className="scroll-mt-[110px] py-[70px] md:py-[90px] lg:py-[120px] bg-cream/10 relative overflow-hidden border-t border-silver/30">
+    <section id="process" className="scroll-mt-[110px] pt-10 pb-20 md:pb-24 lg:pb-28 bg-cream/10 relative overflow-hidden border-t border-silver/30">
       <div className="absolute inset-0 pattern-bg opacity-[0.03]" />
       <div className="absolute top-[20%] left-[5%] w-72 h-72 bg-sage/5 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <SectionHeading title="Consultation Schedule" subtitle="Weekly Operations & Availability" />
 
-        <div className="text-center mt-8 mb-10 max-w-xl mx-auto">
+        <div className="text-center mt-10 mb-10 max-w-[700px] mx-auto">
           <p className="font-inter text-sm text-text-secondary/80 leading-relaxed font-light">
             We value your time and seek to provide a calm, dedicated experience. Explore our weekly schedule to request a session. Click a row to check chamber details and document prerequisites.
           </p>
         </div>
 
         {/* Schedule Calendar View */}
-        <ScrollReveal animation="fadeUp" className="max-w-5xl mx-auto">
+        <ScrollReveal animation="fadeUp" className="max-w-7xl mx-auto w-full">
           <div className="bg-white/80 backdrop-blur-sm border border-silver/50 rounded-3xl overflow-hidden shadow-[0_8px_30px_rgba(44,53,46,0.04)]">
             
             {/* Header row for desktop */}
